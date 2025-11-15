@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Octokit } from '@octokit/core'
 import MarkdownEditor from './components/MarkdownEditor'
+import GitHubFolderManager from './components/GitHubFolderManager'
 import './App.css'
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
   const [isSaving, setIsSaving] = useState(false)
   const [saveStatus, setSaveStatus] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [showFolderManager, setShowFolderManager] = useState(false)
+  const [repositoryFiles, setRepositoryFiles] = useState([])
 
   // 处理保存到GitHub的逻辑
   const handleSaveToGithub = async () => {
@@ -73,6 +76,25 @@ function App() {
       ...prev,
       [name]: value
     }))
+  }
+
+  // 处理路径选择
+  const handlePathSelect = (selectedPath) => {
+    setGithubConfig(prev => ({
+      ...prev,
+      path: selectedPath
+    }))
+    setShowFolderManager(false)
+  }
+
+  // 列出仓库文件
+  const listRepositoryFiles = async () => {
+    if (!githubConfig.token || !githubConfig.owner || !githubConfig.repo) {
+      setSaveStatus('请填写完整的GitHub配置信息')
+      return
+    }
+
+    setShowFolderManager(true)
   }
 
   return (
@@ -136,13 +158,24 @@ function App() {
 
             <div className="form-group">
               <label>文件路径:</label>
-              <input
-                type="text"
-                name="path"
-                value={githubConfig.path}
-                onChange={handleConfigChange}
-                placeholder="例如: docs/example.md"
-              />
+              <div className="path-input-group">
+                <input
+                  type="text"
+                  name="path"
+                  value={githubConfig.path}
+                  onChange={handleConfigChange}
+                  placeholder="例如: docs/example.md"
+                />
+                <button 
+                  type="button" 
+                  className="browse-button"
+                  onClick={listRepositoryFiles}
+                  disabled={!githubConfig.token || !githubConfig.owner || !githubConfig.repo}
+                >
+                  📁 浏览
+                </button>
+              </div>
+              <small>点击浏览按钮查看仓库文件结构</small>
             </div>
 
             <div className="form-group">
@@ -189,6 +222,44 @@ function App() {
             )}
           </div>
         </div>
+
+        {/* GitHub文件夹管理器模态框 */}
+        {showFolderManager && (
+          <div className="modal-overlay" onClick={() => setShowFolderManager(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <h3>选择保存位置</h3>
+                <button 
+                  className="close-button" 
+                  onClick={() => setShowFolderManager(false)}
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="modal-body">
+                <GitHubFolderManager
+                  githubConfig={githubConfig}
+                  onPathSelect={handlePathSelect}
+                  currentPath={githubConfig.path}
+                />
+              </div>
+              <div className="modal-footer">
+                <button 
+                  className="cancel-button" 
+                  onClick={() => setShowFolderManager(false)}
+                >
+                  取消
+                </button>
+                <button 
+                  className="confirm-button" 
+                  onClick={() => setShowFolderManager(false)}
+                >
+                  确定
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <footer className="app-footer">

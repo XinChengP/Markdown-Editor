@@ -1,0 +1,242 @@
+/* GitHub文件夹管理器样式 */
+.github-folder-manager {
+  background: #f8f9fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.folder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.folder-header h3 {
+  margin: 0;
+  color: #24292e;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.folder-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.folder-actions button {
+  padding: 6px 12px;
+  border: 1px solid #d1d5da;
+  border-radius: 4px;
+  background: #fff;
+  color: #24292e;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.folder-actions button:hover:not(:disabled) {
+  background: #f6f8fa;
+  border-color: #0366d6;
+}
+
+.folder-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 面包屑导航 */
+.breadcrumbs {
+  margin-bottom: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #586069;
+}
+
+.breadcrumbs span {
+  font-weight: 500;
+}
+
+/* 返回按钮 */
+.back-button {
+  margin-bottom: 12px;
+}
+
+.back-button button {
+  background: #f6f8fa;
+  border: 1px solid #d1d5da;
+  border-radius: 4px;
+  color: #24292e;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-button button:hover {
+  background: #e1e4e8;
+}
+
+/* 错误信息 */
+.error-message {
+  background: #ffeaea;
+  border: 1px solid #f97583;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+  color: #d73a49;
+  font-size: 14px;
+}
+
+/* 文件列表 */
+.file-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e1e4e8;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-item:last-child {
+  border-bottom: none;
+}
+
+.file-item:hover {
+  background: #f6f8fa;
+}
+
+.file-item.selected {
+  background: #e3f2fd;
+  border-left: 3px solid #0366d6;
+}
+
+.file-item.folder {
+  background: #f8f9fa;
+}
+
+.file-item.folder:hover {
+  background: #e1e4e8;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.file-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.file-name {
+  font-weight: 500;
+  color: #24292e;
+  flex: 1;
+}
+
+.file-size {
+  font-size: 12px;
+  color: #586069;
+  margin-left: 8px;
+}
+
+.file-actions {
+  font-size: 12px;
+  color: #0366d6;
+  font-weight: 500;
+}
+
+.enter-folder {
+  color: #28a745;
+}
+
+.select-file {
+  color: #0366d6;
+}
+
+.file-type {
+  color: #6c757d;
+}
+
+/* 加载状态 */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #586069;
+  font-size: 14px;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 40px;
+  color: #586069;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* 使用说明 */
+.usage-tips {
+  margin-top: 16px;
+  padding: 12px;
+  background: #e3f2fd;
+  border: 1px solid #bbdefb;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #1565c0;
+}
+
+.usage-tips p {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.usage-tips ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.usage-tips li {
+  margin-bottom: 4px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .github-folder-manager {
+    padding: 12px;
+    margin: 12px 0;
+  }
+  
+  .folder-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .file-item {
+    padding: 10px 12px;
+  }
+  
+  .file-info {
+    gap: 8px;
+  }
+  
+  .file-size {
+    display: none;
+  }
+}

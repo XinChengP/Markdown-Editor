@@ -243,6 +243,144 @@ body {
   margin-top: auto;
 }
 
+/* 路径输入组 */
+.path-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.path-input-group input {
+  flex: 1;
+}
+
+.browse-button {
+  padding: 8px 12px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.browse-button:hover:not(:disabled) {
+  background: #218838;
+}
+
+.browse-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e1e4e8;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #24292e;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #586069;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.close-button:hover {
+  background: #e1e4e8;
+  color: #24292e;
+}
+
+.modal-body {
+  flex: 1;
+  padding: 0;
+  overflow-y: auto;
+  max-height: calc(90vh - 140px);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #e1e4e8;
+  background: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+}
+
+.cancel-button {
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.cancel-button:hover {
+  background: #5a6268;
+}
+
+.confirm-button {
+  padding: 8px 16px;
+  background: #0366d6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.confirm-button:hover {
+  background: #0256cc;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .app-header h1 {
@@ -269,6 +407,23 @@ body {
   }
   
   .save-button {
+    width: 100%;
+  }
+  
+  .modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .modal-body {
+    max-height: calc(95vh - 140px);
+  }
+  
+  .path-input-group {
+    flex-direction: column;
+  }
+  
+  .browse-button {
     width: 100%;
   }
 }
