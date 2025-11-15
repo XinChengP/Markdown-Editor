@@ -11,10 +11,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@octokit/core": "^5.0.0",
     "@uiw/react-markdown-editor": "^5.11.3",
-    "@octokit/core": "^5.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -25,6 +25,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "gh-pages": "^6.1.0",
+    "terser": "^5.44.1",
     "vite": "^4.4.5"
   }
 }
