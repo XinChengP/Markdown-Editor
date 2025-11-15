@@ -40,7 +40,9 @@ const MarkdownEditor = ({ initialValue = '', onChange, height = 500 }) => {
           dividingLine: { name: 'dividingLine', title: '分割线 (Ctrl+H)', icon: 'minus' },
           
           // 标题
-          header: { name: 'header', title: '标题', icon: 'heading' },
+          header1: { name: 'header1', title: '一级标题 (Ctrl+1)', icon: 'h1' },
+          header2: { name: 'header2', title: '二级标题 (Ctrl+2)', icon: 'h2' },
+          header3: { name: 'header3', title: '三级标题 (Ctrl+3)', icon: 'h3' },
           
           // 列表
           list: { name: 'list', title: '列表', icon: 'list-ul' },
@@ -105,7 +107,7 @@ Ctrl+Y: 重做`);
           }
         }}
         // 自定义编辑器配置
-        previewOptions={{
+        previewoptions={{
           components: {
             // 可以在这里自定义渲染组件
             code: ({ inline, children, className, node, ...props }) => {
@@ -123,7 +125,7 @@ Ctrl+Y: 重做`);
           },
         }}
         // 额外的编辑器配置
-        textareaProps={{
+        textareaprops={{
           placeholder: '开始编写你的 Markdown 文档...\n\n支持快捷键：\nCtrl+B: 加粗\nCtrl+I: 斜体\nCtrl+K: 链接\nCtrl+P: 图片',
           spellCheck: true,
           autoFocus: false,
