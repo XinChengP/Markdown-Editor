@@ -1,0 +1,321 @@
+/* Markdown 编辑器样式优化 */
+.markdown-editor-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e4e8;
+  background: #ffffff;
+}
+
+/* 编辑器头部工具栏样式 */
+.w-md-editor-toolbar {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  border-bottom: 2px solid #dee2e6 !important;
+  padding: 12px 16px !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* 工具栏按钮样式 */
+.w-md-editor-toolbar button {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid #d1d5da !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  margin: 0 4px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.w-md-editor-toolbar button:hover {
+  background: #ffffff !important;
+  border-color: #0366d6 !important;
+  box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+.w-md-editor-toolbar button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 工具栏图标样式 */
+.w-md-editor-toolbar svg {
+  width: 16px !important;
+  height: 16px !important;
+  color: #586069 !important;
+  transition: color 0.3s ease !important;
+}
+
+.w-md-editor-toolbar button:hover svg {
+  color: #0366d6 !important;
+}
+
+/* 编辑器分割面板样式 */
+.w-md-editor-content {
+  background: #ffffff !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+/* 编辑区域样式 */
+.w-md-editor-text {
+  background: #fafbfc !important;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Liberation Mono', 'Menlo', 'Courier', monospace !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  padding: 20px !important;
+  color: #24292e !important;
+}
+
+/* 预览区域样式 */
+.w-md-editor-preview {
+  background: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  padding: 20px !important;
+}
+
+/* 代码块样式 */
+.w-md-editor-text pre,
+.w-md-editor-preview pre {
+  background: #f6f8fa !important;
+  border: 1px solid #e1e4e8 !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  overflow-x: auto !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.w-md-editor-text code,
+.w-md-editor-preview code {
+  background: rgba(27, 31, 35, 0.05) !important;
+  border-radius: 3px !important;
+  padding: 0.2em 0.4em !important;
+  font-size: 85% !important;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Liberation Mono', 'Menlo', 'Courier', monospace !important;
+}
+
+/* 标题样式 */
+.w-md-editor-preview h1,
+.w-md-editor-preview h2,
+.w-md-editor-preview h3,
+.w-md-editor-preview h4,
+.w-md-editor-preview h5,
+.w-md-editor-preview h6 {
+  color: #24292e !important;
+  margin-top: 24px !important;
+  margin-bottom: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+}
+
+.w-md-editor-preview h1 {
+  font-size: 2em !important;
+  border-bottom: 2px solid #eaecef !important;
+  padding-bottom: 0.3em !important;
+}
+
+.w-md-editor-preview h2 {
+  font-size: 1.5em !important;
+  border-bottom: 1px solid #eaecef !important;
+  padding-bottom: 0.3em !important;
+}
+
+/* 链接样式 */
+.w-md-editor-preview a {
+  color: #0366d6 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  border-bottom: 1px solid transparent !important;
+}
+
+.w-md-editor-preview a:hover {
+  color: #0256cc !important;
+  border-bottom-color: #0366d6 !important;
+}
+
+/* 表格样式 */
+.w-md-editor-preview table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 16px 0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.w-md-editor-preview table th {
+  background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 100%) !important;
+  border: 1px solid #d1d5da !important;
+  padding: 12px 16px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  color: #24292e !important;
+}
+
+.w-md-editor-preview table td {
+  border: 1px solid #d1d5da !important;
+  padding: 12px 16px !important;
+  background: #ffffff !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.w-md-editor-preview table tr:hover td {
+  background: #f6f8fa !important;
+}
+
+/* 引用样式 */
+.w-md-editor-preview blockquote {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  border-left: 4px solid #0366d6 !important;
+  border-radius: 0 8px 8px 0 !important;
+  padding: 16px 20px !important;
+  margin: 16px 0 !important;
+  font-style: italic !important;
+  color: #586069 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 列表样式 */
+.w-md-editor-preview ul,
+.w-md-editor-preview ol {
+  padding-left: 2em !important;
+  margin: 16px 0 !important;
+}
+
+.w-md-editor-preview li {
+  margin: 8px 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* 分割线样式 */
+.w-md-editor-preview hr {
+  border: none !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent 0%, #d1d5da 50%, transparent 100%) !important;
+  margin: 32px 0 !important;
+}
+
+/* 图片样式 */
+.w-md-editor-preview img {
+  max-width: 100% !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  margin: 16px 0 !important;
+  border: 1px solid #e1e4e8 !important;
+}
+
+/* 滚动条样式 */
+.w-md-editor-text::-webkit-scrollbar,
+.w-md-editor-preview::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.w-md-editor-text::-webkit-scrollbar-track,
+.w-md-editor-preview::-webkit-scrollbar-track {
+  background: #f1f3f4 !important;
+  border-radius: 4px !important;
+}
+
+.w-md-editor-text::-webkit-scrollbar-thumb,
+.w-md-editor-preview::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #c1c8cd 0%, #a7adb2 100%) !important;
+  border-radius: 4px !important;
+  transition: background 0.3s ease !important;
+}
+
+.w-md-editor-text::-webkit-scrollbar-thumb:hover,
+.w-md-editor-preview::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #a7adb2 0%, #8e9499 100%) !important;
+}
+
+/* 全屏模式样式 */
+.w-md-editor-fullscreen {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.w-md-editor-fullscreen .w-md-editor-toolbar {
+  border-radius: 0 !important;
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%) !important;
+}
+
+.w-md-editor-fullscreen .w-md-editor-toolbar button {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.w-md-editor-fullscreen .w-md-editor-toolbar button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .markdown-editor-container {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .w-md-editor-toolbar {
+    padding: 8px 12px !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+  
+  .w-md-editor-toolbar button {
+    padding: 6px 8px !important;
+    margin: 0 2px !important;
+  }
+  
+  .w-md-editor-text,
+  .w-md-editor-preview {
+    padding: 12px !important;
+    font-size: 14px !important;
+  }
+  
+  .w-md-editor-preview h1 {
+    font-size: 1.5em !important;
+  }
+  
+  .w-md-editor-preview h2 {
+    font-size: 1.25em !important;
+  }
+}
+
+/* 暗色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .markdown-editor-container {
+    background: #1a1a1a !important;
+    border-color: #333 !important;
+  }
+  
+  .w-md-editor-toolbar {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%) !important;
+    border-bottom-color: #4a5568 !important;
+  }
+  
+  .w-md-editor-toolbar button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .w-md-editor-toolbar button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .w-md-editor-toolbar svg {
+    color: #e2e8f0 !important;
+  }
+  
+  .w-md-editor-text {
+    background: #1a1a1a !important;
+    color: #e2e8f0 !important;
+  }
+  
+  .w-md-editor-preview {
+    background: #1a1a1a !important;
+    color: #e2e8f0 !important;
+  }
+}

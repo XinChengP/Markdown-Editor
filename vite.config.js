@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/Markdown-Editor/', // GitHub Pages 基础路径 - 与实际仓库名匹配
   server: {
-    port: 3000
+    port: 3500
   },
   build: {
     outDir: 'dist',

@@ -106,11 +106,27 @@ function App() {
 
       <main className="app-main">
         <div className="editor-section">
-          <h2>编辑区域</h2>
+          <div className="editor-header">
+            <h2>📝 Markdown 编辑器</h2>
+            <div className="editor-stats">
+              <span className="stat-item">
+                <span className="stat-label">字数：</span>
+                <span className="stat-value">{markdownContent.trim().split(/\s+/).filter(word => word.length > 0).length}</span>
+              </span>
+              <span className="stat-item">
+                <span className="stat-label">字符：</span>
+                <span className="stat-value">{markdownContent.length}</span>
+              </span>
+              <span className="stat-item">
+                <span className="stat-label">行数：</span>
+                <span className="stat-value">{markdownContent.split('\n').length}</span>
+              </span>
+            </div>
+          </div>
           <MarkdownEditor
             initialValue={markdownContent}
             onChange={setMarkdownContent}
-            height={500}
+            height={600}
           />
         </div>
 
